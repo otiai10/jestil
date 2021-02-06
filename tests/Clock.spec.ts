@@ -25,4 +25,12 @@ describe('Clock', () => {
       expect(new Date().getFullYear()).not.toBe(mockedYear);
     });
   });
+  describe('random', () => {
+    it('generates random date', () => {
+      const original = new Date().toString();
+      const clock = Clock.random();
+      expect(clock.frozen().toString()).not.toBe(original);
+      clock.release();
+    });
+  });
 });
