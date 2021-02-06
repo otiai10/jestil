@@ -7,6 +7,8 @@ jest test utils, mocking global `Date`, and others stuff.
 ## Clock.freeze & release
 
 ```typescript
+import {Clock} from "jestil";
+
 describe("Back to the Future", () => {
   describe("DeLorean", () => {
     it("can go back to the future", () => {
