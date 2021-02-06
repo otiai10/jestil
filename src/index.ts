@@ -69,3 +69,43 @@ export class Clock {
     return this.spied.mockRestore();
   }
 }
+
+
+/**
+ * Fetch
+ * @example
+ */
+export class Fetch<T> {
+  /**
+   * @param {T} data
+   * @return {void}
+   */
+  static replies<T>(data: T): void {
+    const original = global.fetch;
+    global.fetch = (
+        /* _info: RequestInfo, _init?: RequestInit */
+    ): Fetch<T> => {
+      return new this<T>(data, original);
+    };
+  }
+
+  /**
+   * @param {T} data
+   * @param {function} original
+   */
+  constructor(
+    private data: T,
+    private original:
+      (info: RequestInfo, init?: RequestInit) => Promise<Response>,
+  ) {}
+
+  /**
+   * @return {Promise<T>}
+   */
+  json(): Promise<T> {
+    return new Promise((resolve) => {
+      global.fetch = this.original;
+      resolve(this.data);
+    });
+  }
+}

@@ -1,6 +1,6 @@
 # jestil
 
-jest test utils, mocking global `Date`, and others stuff.
+jest test utils, mocking global `Date`, and other stuff.
 
 
 [![JavaScript CI](https://github.com/otiai10/jestil/workflows/JavaScript%20CI/badge.svg)](https://github.com/otiai10/jestil/actions?query=workflow%3A%22JavaScript+CI%22)
@@ -31,6 +31,30 @@ describe("Back to the Future", () => {
 
       // new Date().getFullYear() == 2021 (maybe)
       expect(delorean.jump()).toBe(false);
+
+    });
+  });
+});
+```
+
+## Fetch.replies
+
+```typescript
+import {Fetch} from "jestil";
+
+describe('SchrodingerCat', () => {
+  describe('exists', () => {
+    it('should return its existence', async () => {
+
+      // Define the response you want for any "fetch" call.
+      Fetch.replies({message: 'Hey, I must exist!', status: 200});
+
+      // Even it'll be called inside your method.
+      const response = await SchrodingerCat.askInsideBox();
+
+      // The response will be what you specified.
+      expect(response.message).toBe('Hey, I must exist!');
+      expect(response.status).toBe(200);
 
     });
   });
