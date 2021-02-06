@@ -1,0 +1,9 @@
+# Source
+node_modules
+lib
+
+# Tests
+coverage
+
+# Editors
+.vscode

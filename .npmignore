@@ -1,0 +1,7 @@
+.github
+.vscode
+coverage
+node_modules
+.eslintrc.yml
+.gitignore
+tsconfig.json
