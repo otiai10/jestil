@@ -2,6 +2,13 @@
 
 jest test utils, mocking global `Date`, and others stuff.
 
+
+[![JavaScript CI](https://github.com/otiai10/jestil/workflows/JavaScript%20CI/badge.svg)](https://github.com/otiai10/jestil/actions?query=workflow%3A%22JavaScript+CI%22)
+[![npm version](https://badge.fury.io/js/jestil.svg)](https://badge.fury.io/js/jestil)
+[![npm download](https://img.shields.io/npm/dt/jestil.svg)](https://www.npmjs.com/package/jestil)
+[![codecov](https://codecov.io/gh/otiai10/jestil/branch/main/graph/badge.svg?token=Pde7yW9nef)](https://codecov.io/gh/otiai10/jestil)
+[![Maintainability](https://api.codeclimate.com/v1/badges/384382f3414cc21ad50a/maintainability)](https://codeclimate.com/github/otiai10/jestil/maintainability)
+
 # Example
 
 ## Clock.freeze & release
