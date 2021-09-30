@@ -84,8 +84,10 @@ export class Fetch<T> {
     const original = global.fetch;
     global.fetch = (
         /* _info: RequestInfo, _init?: RequestInit */
-    ): Fetch<T> => {
-      return new this<T>(data, original);
+    ): Promise<Fetch<T>> => {
+      return new Promise((resolve) => {
+        resolve(new this<T>(data, original));
+      });
     };
   }
 
